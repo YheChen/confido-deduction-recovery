@@ -1,0 +1,27 @@
+{
+  "name": "@confido/server",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch --clear-screen=false --disable-warning=ExperimentalWarning src/index.ts",
+    "start": "NODE_ENV=production tsx --disable-warning=ExperimentalWarning src/index.ts",
+    "db:reset": "tsx --disable-warning=ExperimentalWarning src/scripts/reset-db.ts",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "express": "^5.1.0",
+    "zod": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.10",
+    "@types/express": "^5.0.6",
+    "@types/node": "^24.10.0",
+    "@types/supertest": "^6.0.3",
+    "supertest": "^7.1.4",
+    "tsx": "^4.20.6",
+    "typescript": "~5.9.3",
+    "vitest": "^4.0.8"
+  }
+}

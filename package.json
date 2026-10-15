@@ -1,0 +1,26 @@
+{
+  "name": "confido-deduction-recovery",
+  "private": true,
+  "description": "Internal tool for triaging retailer deductions and tracking dispute recovery.",
+  "workspaces": [
+    "server",
+    "web"
+  ],
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "setup": "npm install && npm run db:reset",
+    "dev": "concurrently -k -n api,web -c blue,magenta \"npm:dev -w server\" \"npm:dev -w web\"",
+    "db:reset": "npm run db:reset -w server --",
+    "build": "npm run build -w web",
+    "start": "npm run build && npm run start -w server",
+    "test": "npm run test -w server",
+    "typecheck": "npm run typecheck -w server && npm run typecheck -w web",
+    "build:vercel": "node scripts/build-vercel.mjs"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "esbuild": "^0.28.2"
+  }
+}

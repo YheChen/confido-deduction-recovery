@@ -1,0 +1,12 @@
+node_modules/
+dist/
+*.tsbuildinfo
+.DS_Store
+server/var/
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+.env
+.vercel/
+.vercel
